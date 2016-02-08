@@ -1,0 +1,4 @@
+root = true
+
+[*.{scss,jade}]
+indent_style = tab

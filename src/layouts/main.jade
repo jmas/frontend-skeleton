@@ -1,13 +1,14 @@
-//- layout.jade
 doctype html
 html
-    head
-        link(rel='stylesheet', href='/assets/stylesheets/all.css')
-        block title
-            title Default title
-    body
-        include ../partials/header.jade
+	head
+		link(rel='stylesheet', href='/assets/stylesheets/all.css')
+		block title
+			title Default title
+	body
+		.row
+			.large-12.middle-12.small-12.columns
+				include ../partials/header.jade
 
-        block content
+				block content
 
-        include ../partials/footer.jade
+				include ../partials/footer.jade
