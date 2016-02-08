@@ -11,3 +11,15 @@ Usage
 1. [Install LiveReload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei) to Google Chrome plugin
 2. Open [http://localhost:1337/home.html](http://localhost:1337/home.html).
 3. Make changes in `src/*.jade` files and look on page opened in Google Chrome
+
+Directories
+-----------
+
+* `src/*.jade` - jade page templates
+* `src/layouts/*.jade` - jade layouts templates (used by `extends` in pages)
+* `src/partials/*jade` - jade partial templates (used by `include` in pages or layouts)
+* `src/stylesheets/all.scss` - scss base includes (do not contain any real CSS selector, only `import` or `include`)
+* `src/stylesheets/partials/*.scss` - styles for partials (like components)
+* `src/scripts/*.js` - scripts
+* `dist/` - compiled html and assets
+* other directories are service
