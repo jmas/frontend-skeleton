@@ -3,7 +3,6 @@ Install
 
 0. [Download it](https://github.com/jmas/frontend-skeleton/archive/master.zip)
 1. Use command `npm i` to install dependencies
-```
 
 Usage
 -----
