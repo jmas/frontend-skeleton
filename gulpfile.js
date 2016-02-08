@@ -21,7 +21,7 @@ gulp.task('css', function() {
             includePaths: ['src/assets/stylesheets', 'node_modules/foundation-sites/scss'],
             errLogToConsole: true
         }))
-        .pipe(csso())
+        //.pipe(csso())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('dist/assets/stylesheets/'))
         .pipe(livereload(server));
@@ -30,7 +30,7 @@ gulp.task('css', function() {
 gulp.task('js', function() {
     return gulp.src('src/assets/scripts/*.js')
         .pipe(sourcemaps.init())
-        .pipe(uglify())
+        //.pipe(uglify())
         .pipe(concat('all.min.js'))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('dist/assets/scripts/'))
