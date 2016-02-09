@@ -23,4 +23,4 @@ Directories
 * `src/stylesheets/partials/*.scss` - styles for partials (like components)
 * `src/scripts/*.js` - scripts
 * `dist/` - compiled html and assets
-* other directories are service
+
