@@ -21,12 +21,13 @@ var babelPresetEs2015 = require('babel-preset-es2015');
 var NODE_MODULES_PATH = './node_modules';
 var FOUNDATION_PATH = NODE_MODULES_PATH + '/foundation-sites';
 var FOUNDATION_JS_PATH = FOUNDATION_PATH + '/js';
+var MOTION_UI_PATH = NODE_MODULES_PATH + '/motion-ui/src';
 
 gulp.task('css', function() {
     return gulp.src('src/assets/stylesheets/*.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({
-            includePaths: ['src/assets/stylesheets', 'node_modules/foundation-sites/scss'],
+            includePaths: ['src/assets/stylesheets', 'node_modules/foundation-sites/scss', MOTION_UI_PATH],
             errLogToConsole: true
         }))
         .pipe(sourcemaps.write())
