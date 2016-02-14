@@ -20,6 +20,7 @@
     "babelify": "^7.2.0",
     "foundation-sites": "^6.1.2",
     "gulp-browserify": "^0.5.1",
+    "gulp-flatten": "^0.2.0",
     "gulp-sass": "^2.2.0",
     "gulp-sourcemaps": "^1.6.0",
     "tiny-lr": "^0.2.1"

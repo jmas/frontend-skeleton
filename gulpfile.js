@@ -17,6 +17,7 @@ var gulp        = require('gulp'),
 var browserify = require('gulp-browserify');
 var babelify = require('babelify');
 var babelPresetEs2015 = require('babel-preset-es2015');
+var flatten = require('gulp-flatten');
 
 var NODE_MODULES_PATH = './node_modules';
 var FOUNDATION_PATH = NODE_MODULES_PATH + '/foundation-sites';
@@ -56,6 +57,12 @@ gulp.task('js', function() {
         .pipe(livereload(server));
 });
 
+gulp.task('images', function() {
+    return gulp.src('src/assets/images/*')
+        .pipe(flatten())
+        .pipe(gulp.dest('dist/assets/images/'));
+});
+
 gulp.task('templates', function() {
     return gulp.src('src/*.jade')
         .pipe(jade({
@@ -82,4 +89,4 @@ gulp.task('watch', function () {
     });
 });
 
-gulp.task('default', ['js','css','templates','express','watch']);
+gulp.task('default', ['images', 'js','css','templates','express','watch']);
