@@ -10,6 +10,8 @@
     "gulp-csso": "~0.1.8",
     "gulp-jade": "~0.3.0",
     "gulp-livereload": "~0.2.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
     "gulp-uglify": "~0.1.0",
     "gulp-util": "~2.2.12",
     "marked": "~0.3.0",

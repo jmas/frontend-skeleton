@@ -12,7 +12,9 @@ var gulp        = require('gulp'),
     marked      = require('marked'), // For :markdown filter in jade
     path        = require('path'),
     server      = tinylr(),
-    sourcemaps  = require('gulp-sourcemaps');
+    sourcemaps  = require('gulp-sourcemaps'),
+    notify      = require("gulp-notify"),
+    plumber     = require('gulp-plumber');
 
 var browserify = require('gulp-browserify');
 var babelify = require('babelify');
@@ -26,6 +28,7 @@ var MOTION_UI_PATH = NODE_MODULES_PATH + '/motion-ui/src';
 
 gulp.task('css', function() {
     return gulp.src('src/assets/stylesheets/*.scss')
+        .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
         .pipe(sourcemaps.init())
         .pipe(sass({
             includePaths: ['src/assets/stylesheets', 'node_modules/foundation-sites/scss', MOTION_UI_PATH],
@@ -38,6 +41,7 @@ gulp.task('css', function() {
 
 gulp.task('js', function() {
     return gulp.src('src/assets/scripts/*.js')
+        .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
         .pipe(sourcemaps.init())
         .pipe(browserify({
             debug: true,
@@ -65,6 +69,7 @@ gulp.task('images', function() {
 
 gulp.task('templates', function() {
     return gulp.src('src/*.jade')
+        .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
         .pipe(jade({
             pretty: true
         }))
